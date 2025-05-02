@@ -1,6 +1,8 @@
 # comp590-finalexam
-author: Madison Roberts 
-PID: 730460151
+
+**Author**: Madison Roberts 
+**PID**: 730460151
+
 ## Object-Oriented Pillars in Elixir 
 ### Encapsulation 
 Each animal is represented as an isolated process. Internal state (name) is private. It can't be accessed directly, only via message passing ({:get_name, sender}). 
@@ -11,5 +13,6 @@ While Elixir doesn't support classical inheritance, I simulated it by passing th
 ### Polymorphism 
 Each behavior module (Dog, Cat) implements its own version of speak/2. When an Animal receives a :speak message, it delegates to the behavior module allowing runtime polymorphism. 
 
-### How to Run
+## How to Run
+```bash
 elixir animal.exs
