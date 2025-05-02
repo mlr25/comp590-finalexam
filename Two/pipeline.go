@@ -17,6 +17,7 @@ func main() {
 
 	wgProducers.Add(2)
 
+	// Two Producers
 	go func() {
 		defer wgProducers.Done()
 		for i := 1; i <= 29; i += 2 {
@@ -40,6 +41,7 @@ func main() {
 	
 	wgConsumers.Add(2)
 
+	// Two Consumers
 	go func() {
 		defer wgConsumers.Done()
 		for value := range inCh {
@@ -63,6 +65,7 @@ func main() {
 	
 	wgFinal.Add(1)
 
+	// Final Filter
 	go func() {
 		defer wgFinal.Done()
 		previous := -1
